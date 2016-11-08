@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/llHome">
+
+    <TextView
+        android:text="24° C"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvCurrentTemp"
+        android:textSize="76sp"
+        android:paddingLeft="24sp"
+        android:paddingTop="24sp"
+        android:textColor="#ffffff"
+        android:shadowColor="#4D000000"
+        android:shadowRadius="15"
+        android:shadowDy="5"
+        android:shadowDx="5"/>
+
+    <TextView
+        android:text="Raining for the hour."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvCurrentSummary"
+        android:paddingLeft="24sp"
+        android:textSize="24sp"
+        android:textColor="#bababa"/>
+</LinearLayout>
