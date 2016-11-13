@@ -8,6 +8,7 @@ import android.util.Log;
 import org.junit.Test;
 import org.junit.Assert;
 
+import io.github.rob__.shine.DarkSky.Models.Forecast;
 import io.github.rob__.shine.Model.MyLocation;
 import io.github.rob__.shine.Service.MyService;
 
@@ -23,6 +24,21 @@ public class PresenterTest {
             @Override
             public void showLocation(Location location){
                 loc.setLocation(location);
+            }
+
+            @Override
+            public void showForecastInfo(Forecast forecase){
+
+            }
+
+            @Override
+            public void reactToTouch(int action){
+
+            }
+
+            @Override
+            public void showTimePreview(String formattedTime){
+
             }
         };
 

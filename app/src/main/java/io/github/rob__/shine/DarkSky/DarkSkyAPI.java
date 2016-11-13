@@ -27,14 +27,17 @@ public class DarkSkyAPI {
 
     }
 
+    public boolean x = false;
     public void makeCall(double latitude, double longitude, final DarkSkyCallback callback){
         Call<Forecast> request = mInterface.getForecast(API_KEY, latitude, longitude);
 
+        if(x) return;
         request.enqueue(new Callback<Forecast>() {
             @Override
             public void onResponse(Call<Forecast> call, Response<Forecast> response) {
                 Log.d(TAG, "Successfully made API request through Dark Sky API");
                 int statusCode = response.code();
+                x = true;
                 Log.d(TAG, "Status code for call: " + String.valueOf(statusCode));
 
                 callback.onResponse(response);
@@ -43,7 +46,7 @@ public class DarkSkyAPI {
             @Override
             public void onFailure(Call<Forecast> call, Throwable t) {
                 Log.d(TAG, "Error making API call through Dark Sky API");
-                t.printStackTrace();
+                callback.onFailure(t);
             }
         });
     }

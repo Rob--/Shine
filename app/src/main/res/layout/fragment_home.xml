@@ -1,30 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:htext="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/llHome">
+    android:id="@+id/rlHome"
+    android:background="#000">
 
-    <TextView
-        android:text="24° C"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvCurrentTemp"
-        android:textSize="76sp"
-        android:paddingLeft="24sp"
-        android:paddingTop="24sp"
-        android:textColor="#ffffff"
-        android:shadowColor="#4D000000"
-        android:shadowRadius="15"
-        android:shadowDy="5"
-        android:shadowDx="5"/>
-
-    <TextView
-        android:text="Raining for the hour."
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvCurrentSummary"
-        android:paddingLeft="24sp"
-        android:textSize="24sp"
-        android:textColor="#bababa"/>
-</LinearLayout>
+        android:id="@+id/llHome"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <TextView
+                android:text="24.0° C"
+                android:id="@+id/tvCurrentTemp"
+                android:textSize="68sp"
+                android:gravity="center_vertical"
+                android:textColor="#f2ffffff"
+                android:paddingLeft="25sp"
+                android:paddingTop="10sp"
+                android:shadowColor="#4D000000"
+                android:shadowRadius="15"
+                android:shadowDy="5"
+                android:shadowDx="5"
+                android:layout_height="fill_parent"
+                android:layout_width="0px"
+                android:layout_weight="0.70" />
+
+            <ImageView
+                app:srcCompat="@drawable/ic_cloud_day"
+                android:backgroundTint="#00000000"
+                android:id="@+id/ivCurrentIcon"
+                android:src="@drawable/ic_cloud_day"
+                android:background="#00ffffff"
+                android:layout_gravity="center"
+                android:padding="15dp"
+                android:tint="#ffffff"
+                android:layout_height="wrap_content"
+                android:layout_width="0px"
+                android:layout_weight="0.3"
+                android:adjustViewBounds="true" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:layout_marginLeft="25sp"
+            android:layout_marginRight="25sp"
+            android:background="#b3ffffff" />
+
+        <!--<TextView
+            android:text="Raining for the hour."
+            android:id="@+id/tvCurrentSummary"
+            android:textAlignment="textStart"
+            android:paddingLeft="24sp"
+            android:paddingRight="24sp"
+            android:textSize="24sp"
+            android:textColor="#f2ffffff"
+            android:shadowColor="#4D000000"
+            android:shadowRadius="15"
+            android:shadowDy="5"
+            android:shadowDx="5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />-->
+
+        <TextSwitcher
+            android:id="@+id/tvCurrentSummary"
+            android:textAlignment="textStart"
+            android:paddingLeft="24sp"
+            android:paddingRight="24sp"
+            android:textSize="24sp"
+            android:textColor="#ffffff"
+            android:shadowColor="#4D000000"
+            android:shadowRadius="15"
+            android:shadowDy="5"
+            android:shadowDx="5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inAnimation="@android:anim/slide_in_left"
+            android:outAnimation="@android:anim/slide_out_right" >
+    </TextSwitcher>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:text="13:48"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTimePreview"
+        android:layout_gravity="bottom"
+        android:textColor="#b3ffffff"
+        android:textSize="64sp"
+        android:paddingLeft="25sp"
+        android:paddingBottom="10sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

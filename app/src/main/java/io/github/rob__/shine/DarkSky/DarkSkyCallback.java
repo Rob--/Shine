@@ -6,5 +6,6 @@ import retrofit2.Response;
 public interface DarkSkyCallback {
 
     void onResponse(Response<Forecast> forecast);
+    void onFailure(Throwable t);
 
 }
